@@ -1,0 +1,63 @@
+{
+  "id" : "org.jfrog.test.gradle.publish:webservice:1.0-SNAPSHOT",
+  "artifacts" : [ {
+    "type" : "jar",
+    "sha1" : "d9fc43f88a587ad02a8572369d996e5b917e5b39",
+    "md5" : "ad0711a1fafec090aa646890dc56ee0f",
+    "name" : "webservice-1.0-SNAPSHOT.jar"
+  }, {
+    "type" : "properties",
+    "sha1" : "cbae36a1e156cdf1cdb802e9803ca95446507373",
+    "md5" : "3f671140eec33497f6b24d2658b47056",
+    "name" : "webservice-1.0-SNAPSHOT.properties"
+  }, {
+    "type" : "pom",
+    "sha1" : "b1b352bc3cf084f002b78522b851f0e133b4148e",
+    "md5" : "31eec747a7d2d3ac1d102837a88f4b3e",
+    "name" : "webservice-1.0-SNAPSHOT.pom"
+  } ],
+  "excludedArtifacts" : [ ],
+  "dependencies" : [ {
+    "type" : "jar",
+    "sha1" : "883453689ffe73b86fb214ade1a773592f8578bf",
+    "md5" : "08dec0093bd6b7da18888fc1fcb32fd7",
+    "id" : "org.jfrog.test.gradle.publish:shared:1.0-SNAPSHOT",
+    "scopes" : [ "compileClasspath" ]
+  }, {
+    "type" : "jar",
+    "sha1" : "f951934aa5ae5a88d7e6dfaa6d32307d834a88be",
+    "md5" : "7b9216b608d550787bdf43a63d88bf3b",
+    "id" : "commons-collections:commons-collections:3.2",
+    "scopes" : [ "compileClasspath" ]
+  }, {
+    "type" : "jar",
+    "sha1" : "0ad6ae511ca4608a18317fcb19850fd113bb2ae8",
+    "md5" : "b0bf5f906af5a936992514ed087f1fa2",
+    "id" : "commons-io:commons-io:1.2",
+    "scopes" : [ "compileClasspath" ]
+  }, {
+    "type" : "jar",
+    "sha1" : "16313e02a793435009f1e458fa4af5d879f6fb11",
+    "md5" : "237a8e845441bad2e535c57d985c8204",
+    "id" : "commons-lang:commons-lang:2.4",
+    "scopes" : [ "compileClasspath" ]
+  }, {
+    "type" : "jar",
+    "sha1" : "14dd208c9077c462b813ed41c21c57f6a8153694",
+    "md5" : "4cad3d21b85b369c8b00dfb84e270e02",
+    "id" : "org.apache.wicket:wicket:1.3.7",
+    "scopes" : [ "compileClasspath" ]
+  }, {
+    "type" : "jar",
+    "sha1" : "b201651aa1f8e715ea20c0ef8c9d08850d1482f6",
+    "md5" : "9cf6d6c4f9d158a3ab451ca642b94718",
+    "id" : "org.jfrog.test.gradle.publish:gradle-example-publish:1.0-SNAPSHOT",
+    "scopes" : [ "compileClasspath" ]
+  }, {
+    "type" : "jar",
+    "sha1" : "61fce919969d134a4fa2ba4fd5bf151ea63fce13",
+    "md5" : "2d673736b993aa112fda47b9061e4e48",
+    "id" : "org.slf4j:slf4j-api:1.4.2",
+    "scopes" : [ "compileClasspath" ]
+  } ]
+}
