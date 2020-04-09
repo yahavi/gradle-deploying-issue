@@ -1,0 +1,86 @@
+{
+  "version" : "1.0.1",
+  "name" : "gradle-deploying-issue",
+  "number" : "1586440014703",
+  "type" : "GRADLE",
+  "buildAgent" : {
+    "name" : "Gradle",
+    "version" : "5.6.4"
+  },
+  "agent" : {
+    "name" : "Gradle",
+    "version" : "5.6.4"
+  },
+  "started" : "2020-04-09T16:46:54.631+0300",
+  "durationMillis" : 676,
+  "principal" : "yahavi",
+  "artifactoryPrincipal" : "admin",
+  "artifactoryPluginVersion" : "Unknown",
+  "vcs" : [ ],
+  "licenseControl" : {
+    "runChecks" : false,
+    "includePublishedArtifacts" : false,
+    "autoDiscover" : false,
+    "licenseViolationsRecipientsList" : "",
+    "scopesList" : ""
+  },
+  "modules" : [ {
+    "id" : "org.jfrog.test.gradle.publish:shared:1.0",
+    "artifacts" : [ {
+      "type" : "jar",
+      "sha1" : "9a279d5602afd1c08a46caeb1e15d52915fcc696",
+      "md5" : "f447c192563557aa3a45b1b4c4bd38fd",
+      "name" : "shared-1.0.jar"
+    } ],
+    "excludedArtifacts" : [ ],
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.jfrog.test.gradle.publish:gradle-deploying-issue:1.0",
+    "artifacts" : [ {
+      "type" : "jar",
+      "sha1" : "dfb8d45a3374a0d5f343aa3450f13677951a1d7a",
+      "md5" : "ededff7694f1fcbdea56c02c7a0e2d88",
+      "name" : "gradle-deploying-issue-1.0.jar"
+    } ],
+    "excludedArtifacts" : [ ],
+    "dependencies" : [ {
+      "type" : "jar",
+      "sha1" : "9a279d5602afd1c08a46caeb1e15d52915fcc696",
+      "md5" : "f447c192563557aa3a45b1b4c4bd38fd",
+      "id" : "org.jfrog.test.gradle.publish:shared:1.0",
+      "scopes" : [ "compileClasspath" ]
+    }, {
+      "type" : "jar",
+      "sha1" : "16313e02a793435009f1e458fa4af5d879f6fb11",
+      "md5" : "237a8e845441bad2e535c57d985c8204",
+      "id" : "commons-lang:commons-lang:2.4",
+      "scopes" : [ "compileClasspath" ]
+    }, {
+      "type" : "jar",
+      "sha1" : "14dd208c9077c462b813ed41c21c57f6a8153694",
+      "md5" : "4cad3d21b85b369c8b00dfb84e270e02",
+      "id" : "org.apache.wicket:wicket:1.3.7",
+      "scopes" : [ "compileClasspath" ]
+    }, {
+      "type" : "jar",
+      "sha1" : "0ad6ae511ca4608a18317fcb19850fd113bb2ae8",
+      "md5" : "b0bf5f906af5a936992514ed087f1fa2",
+      "id" : "commons-io:commons-io:1.2",
+      "scopes" : [ "compileClasspath" ]
+    }, {
+      "type" : "jar",
+      "sha1" : "61fce919969d134a4fa2ba4fd5bf151ea63fce13",
+      "md5" : "2d673736b993aa112fda47b9061e4e48",
+      "id" : "org.slf4j:slf4j-api:1.4.2",
+      "scopes" : [ "compileClasspath" ]
+    } ]
+  } ],
+  "governance" : {
+    "blackDuckProperties" : {
+      "runChecks" : false,
+      "includePublishedArtifacts" : false,
+      "autoCreateMissingComponentRequests" : false,
+      "autoDiscardStaleComponentRequests" : false
+    }
+  }
+}

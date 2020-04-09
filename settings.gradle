@@ -1,1 +1,1 @@
-include "shared", "gradle-example-publish"
+include "shared", "gradle-deploying-issue"

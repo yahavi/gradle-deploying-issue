@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 JFrog Ltd.
+ * Copyright (C) 2020 JFrog Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,12 +23,6 @@ buildscript {
 //        classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.13.0') // This works
         classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.14.1') // This doesn't work
     }
-    configurations.classpath {
-        resolutionStrategy {
-            cacheDynamicVersionsFor 0, 'seconds'
-            cacheChangingModulesFor 0, 'seconds'
-        }
-    }
 }
 
 def javaProjects() {
@@ -37,28 +31,26 @@ def javaProjects() {
 
 allprojects {
     apply plugin: 'com.jfrog.artifactory'
-//    group = 'org.jfrog.test.gradle.publish'
-    version = currentVersion
+    group = 'org.jfrog.test.gradle.publish' // <-- Removing the group will help
+    version = "1.0"
     repositories {
         jcenter()
     }
 }
 
-artifactoryPublish.skip = true
-
 configure(javaProjects()) {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
 
-    dependencies {
-        testImplementation 'junit:junit:4.7'
+    compileJava {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 
     publishing {
         publications {
             mavenJava(MavenPublication) {
                 from components.java
-                artifact(file("$rootDir/gradle.properties"))
             }
         }
     }
@@ -67,24 +59,16 @@ configure(javaProjects()) {
 artifactoryPublish.skip = true
 
 artifactory {
-    clientConfig.setIncludeEnvVars(true)
-    clientConfig.info.addEnvironmentProperty('test.adding.dynVar',new java.util.Date().toString())
-
-    contextUrl = 'http://127.0.0.1:8081/artifactory'
+    contextUrl = "${artifactory_url}"
     publish {
         repository {
-            repoKey = 'libs-snapshot-local' // The Artifactory repository key to publish to
+            repoKey = 'gradle-release-local' // The Artifactory repository key to publish to
             username = "${artifactory_user}" // The publisher user name
             password = "${artifactory_password}" // The publisher password
         }
         defaults {
-            // Reference to Gradle publications defined in the build script.
-            // This is how we tell the Artifactory Plugin which artifacts should be
-            // published to Artifactory.
             publications('mavenJava')
             publishArtifacts = true
-            // Properties to be attached to the published artifacts.
-            properties = ['qa.level': 'basic', 'dev.team' : 'core']
             publishPom = false // Publish generated POM files to Artifactory (true by default)
             publishIvy = false // Publish generated Ivy descriptor files to Artifactory (true by default)
         }

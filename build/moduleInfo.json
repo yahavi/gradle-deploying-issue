@@ -1,0 +1,6 @@
+{
+  "id" : "org.jfrog.test.gradle.publish:gradle-deploying-issue:1.0",
+  "artifacts" : [ ],
+  "excludedArtifacts" : [ ],
+  "dependencies" : [ ]
+}
