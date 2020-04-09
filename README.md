@@ -10,14 +10,16 @@ When the root module and a sub module have the same name, the submodule's artifa
   * `docker run --name artifactory -d -p 8081:8081 docker.bintray.io/jfrog/artifactory-oss:latest`
   * Go to Artifactory UI: `http://localhost:8081/artifactory` with *username*:admin *password*:password.
   * Create a quick setup of default Gradle repositories from `Welcome admin -> Quick setup -> Gradle -> Create`.
+* Use Build info Gradle extractor 4.14.1:
+ ```groovy
+ classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.14.1')
+ ```
 
 ## Steps to reproduce
-1. Use Build info Gradle extractor 4.14.1: 
-```groovy
-classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.14.1')
-```
-1. Run `./gradlew clean artifactoryPublish --console=verbose`
-1. See that only `shared-1.0.jar` is published. `gradle-deploying-issue-1.0.jar` is not published.
+Run `./gradlew clean artifactoryPublish --console=verbose`
+
+* Only `shared-1.0.jar` is published. `gradle-deploying-issue-1.0.jar` is not published.
+* Unlike expected, `extractModuleInfo` is not triggered by `artifactoryPublish` in the submodule `gradle-deploying-issue`.
 
 ## The 'problematic' commit
 Using the 'Searching for a Lion in the Desert' method, 
