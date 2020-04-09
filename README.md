@@ -17,7 +17,7 @@ When the root module and a sub module have the same name, the submodule's artifa
 classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.14.1')
 ```
 1. Run `./gradlew clean artifactoryPublish --console=verbose`
-1. See that only `shared-1.0.jar` is published.
+1. See that only `shared-1.0.jar` is published. `gradle-deploying-issue-1.0.jar` is not published.
 
 ## The 'problematic' commit
 Using the 'Searching for a Lion in the Desert' method, 
